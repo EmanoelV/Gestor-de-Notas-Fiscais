@@ -11,11 +11,13 @@ class CategoryPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Categorias"),
       ),
-      body: const CustomListView([CategoryListItem('Teste')]),
+      body: CustomListView(
+          List.generate(11, (index) => CategoryListItem('Teste $index'))),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
