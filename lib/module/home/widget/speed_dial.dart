@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
 
+import 'package:gestor_de_notas_fiscais/core/core.dart' show PathRoute;
 import '../home_controller.dart';
 
 class HomeSpeedDial extends SpeedDial {
@@ -12,7 +13,7 @@ class HomeSpeedDial extends SpeedDial {
       labelStyle: const TextStyle(fontSize: 24),
       onTap: () {
         controller.toggleDial();
-        Get.toNamed('/add');
+        Get.toNamed(PathRoute.createNf);
       },
     ),
     SpeedDialChild(
@@ -20,7 +21,7 @@ class HomeSpeedDial extends SpeedDial {
       labelStyle: const TextStyle(fontSize: 24),
       onTap: () {
         controller.toggleDial();
-        Get.toNamed('/add');
+        Get.toNamed(PathRoute.createExpense);
       },
     ),
   ];
@@ -29,7 +30,7 @@ class HomeSpeedDial extends SpeedDial {
             key: key,
             spacing: 24,
             closeManually: true,
-            animatedIcon: AnimatedIcons.menu_close,
+            icon: Icons.add,
             onPress: controller.toggleDial,
             openCloseDial: controller.isDialOpen.value,
             children: _children);

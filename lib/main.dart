@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gestor_de_notas_fiscais/module/home/home_page.dart';
 import 'package:get/get.dart';
+
+import 'core/core.dart';
 
 void main() {
   runApp(const App());
@@ -11,7 +12,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomePage(),
+      getPages: getPages,
+      initialRoute: PathRoute.home,
     );
   }
 }
