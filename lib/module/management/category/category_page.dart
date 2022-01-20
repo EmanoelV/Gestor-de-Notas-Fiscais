@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_de_notas_fiscais/model/model.dart' show CategoryListItem;
+import '../widget/widget.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -7,24 +9,9 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Categorias"),
+        title: const Text("Categorias"),
       ),
-      body: ListView.builder(
-        itemBuilder: (_, index) => ListTile(
-          title: Text('Categoria $index'),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: const [
-              Icon(
-                Icons.edit,
-                color: Colors.blue,
-              ),
-              SizedBox(width: 10),
-              Icon(Icons.delete, color: Colors.red)
-            ],
-          ),
-        ),
-      ),
+      body: const CustomListView([CategoryListItem('Teste')]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),
