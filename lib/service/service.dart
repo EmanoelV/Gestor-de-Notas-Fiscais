@@ -1,1 +1,1 @@
-export 'share_preferences_client.dart';
+export 'firebase_client.dart';
